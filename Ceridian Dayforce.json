@@ -1,0 +1,190 @@
+{
+    "schema": {
+        "options": {},
+        "crud_objects": {
+            "Employees": {
+                "operations": {
+                    "EmployeesList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/V1/Employees"
+                        },
+                        "processing_options": {
+                            "output_field": "Data"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "XRefCode",
+                "resources": {
+                    "XRefCode": "string*"
+                }
+            },
+            "EmployeesExpand": {
+                "operations": {
+                    "EmployeesExpandList": {
+                        "method": "get",
+                        "call": {
+                            "mode":"iteration",
+                            "table": "Employees",
+                            "path": "/V1/Employees/{iterator}",
+                            "iterator": "XRefCode"
+                        },
+                        "processing_options": {
+                            "output_field": "Data"
+                        },
+                        "query_parameters": {
+                        },
+                        "maxSessionCount": 10
+                    }
+                },
+                "parameters": {},
+                "key": "XRefCode",
+                "resources": {
+                    "HireDate": "date*",
+                    "OriginalHireDate": "date*",
+                    "EmployeeBadge": {
+                        "BadgeNumber": "_:string*"
+                    },
+                    "HomeOrganization": {
+                        "XRefCode": "_:string*",
+                        "ShortName": "_:string*",
+                        "LongName": "_:string*"
+                    },
+                    "EmployeeNumber": "string*",
+                    "EmploymentStatuses": {
+                        "Items": [
+                            {
+                            "EmployeeNumber": "string*",
+                            "EmploymentStatus": {
+                                    "XRefCode": "_:string*",
+                                    "ShortName": "_:string*",
+                                    "LongName": "_:string*"
+                            }
+                            }
+                        ]
+                    },
+                    "WorkAssignments": {
+                        "Items": [
+                            {
+                                "Position": {
+                                    "Department": {
+                                        "XRefCode": "_:string*",
+                                        "ShortName": "_:string*"
+                                    },
+                                    "Job": {
+                                        "JobUDFString1": "_:string*",
+                                        "JobFamily": "_:string*"
+                                    },
+                                    "XRefCode": "_:string*",
+                                    "ShortName": "_:string*"
+                                },
+                                "Location": {
+                                    "LegalEntity": "_:string*",
+                                    "XRefCode": "_:string*",
+                                    "ShortName": "_:string*",
+                                    "LongName": "_:string*"
+                                },
+                                "EmploymentStatusReason": {
+                                    "IsPositionChangeReason": "_:boolean"
+                                }
+                            }
+                        ]
+                    },
+                    "EmployeeManagers": {
+                    "Items": [
+                        {
+                        "EffectiveStart": "date*",
+                        "ManagerXRefCode": "string*",
+                        "ManagerFirstName": "string*",
+                        "ManagerLastName": "string*",
+                        "ManagerBadgeNumber": "string*"
+                        }
+                    ]
+                    },
+                    "XRefCode": "string*",
+                    "CommonName": "string*",
+                    "DisplayName": "string*",
+                    "FirstName": "string*",
+                    "LastName": "string*"
+                }
+            }
+        }
+    },
+    "rest": {
+        "config": {
+            "baseUrl": "https://{tenant_id}/api/{company_id}",
+            "get": {
+                "query_parameters": {
+                }
+            },
+            "authentication": "custom_post_token",
+            "call_handling": "generic",
+            "maxCallsPerMinute": 100,
+            "test_connection": {
+                "url": "/V1/Employees"
+            },
+            "accept": "application/json",
+            "retry": [
+                {
+                    "type": "statusCode",
+                    "statusCode": 429,
+                    "retry": {
+                        "type": "simple",
+                        "maxCount": 12,
+                        "waitTime": 5
+                    }
+                },
+                {
+                    "type": "connectionError"
+                }
+            ]
+        },
+        "authOptions": {
+            "authUrl": "https://dfid.dayforcehcm.com/connect/token",
+            "postData" : {
+                "username": "{user_name}",
+                "password": "{password}",
+                "grant_type": "password",
+                "companyId": "{company_id}",
+                "client_id": "{client_id}"
+            },
+            "directToken": true,
+            "tokenPath": "access_token",
+            "headerName": "Authorization",
+            "headerTemplate": "Bearer {token}",
+            "postAsForm": true
+        }
+        
+    },
+    "connection": {
+        "items": [
+            {
+                "name": "tenant_id",
+                "type": "textbox",
+                "label": "Tenant URL:",
+                "value": "us231-services.dayforcehcm.com"
+            },
+            {
+                "name": "page_size",
+                "type": "textbox",
+                "label": "Page Size:",
+                "value": "1000"
+            },
+            {
+                "name": "company_id",
+                "type": "textbox",
+                "label": "Company ID:",
+                "value": ""
+            },
+            {
+                "name": "client_id",
+                "type": "textbox",
+                "label": "Client ID:",
+                "value": "Dayforce.HCMAnywhere.Client"
+            }
+        ]
+    }
+}
