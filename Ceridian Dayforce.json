@@ -48,6 +48,29 @@
                 "parameters": {},
                 "key": "XRefCode",
                 "resources": {
+                    "XRefCode": "string*"
+                }
+            },
+            "DepartmentsDetails": {
+                "operations": {
+                    "DepartmentsDetailsList": {
+                        "method": "get",
+                        "call": {
+                            "mode":"iteration",
+                            "table": "Departments",
+                            "path": "/V1/Departments/{iterator}",
+                            "iterator": "XRefCode"
+                        },
+                        "processing_options": {
+                            "output_field": "Data"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "XRefCode",
+                "resources": {
                     "XRefCode": "string*",
                     "LedgerCode": "string*",
                     "ShortName": "string*",
@@ -75,9 +98,9 @@
                     "XRefCode": "string*"
                 }
             },
-            "EmployeesExpand": {
+            "EmployeesDetails": {
                 "operations": {
-                    "EmployeesExpandList": {
+                    "EmployeesDetailsList": {
                         "method": "get",
                         "call": {
                             "mode":"iteration",
@@ -182,16 +205,39 @@
                 "parameters": {},
                 "key": "XRefCode",
                 "resources": {
-                    "IsCompChangeReason": "boolean*",
-                    "IsLeaveReason": "boolean*",
-                    "IsPositionChangeReason": "boolean*",
-                    "IsTerminationReason": "boolean*",
-                    "IsVoluntaryReason": "boolean*",
-                    "XRefCode": "string*",
-                    "ShortName": "string*",
-                    "LongName": "string*",
-                    "LastModifiedTimestamp": "string"
+                    "XRefCode": "string*"
                 }
+            },
+            "EmploymentStatusReasonsDetails": {
+              "operations": {
+                  "EmploymentStatusReasonsDetailsList": {
+                      "method": "get",
+                      "call": {
+                          "mode":"iteration",
+                          "table": "EmploymentStatusReasons",
+                          "path": "/V1/EmploymentStatusReasons/{iterator}",
+                          "iterator": "XRefCode"
+                      },
+                      "processing_options": {
+                          "output_field": "Data"
+                      },
+                      "query_parameters": {
+                      }
+                  }
+              },
+              "parameters": {},
+              "key": "XRefCode",
+              "resources": {
+                  "IsCompChangeReason": "boolean*",
+                  "IsLeaveReason": "boolean*",
+                  "IsPositionChangeReason": "boolean*",
+                  "IsTerminationReason": "boolean*",
+                  "IsVoluntaryReason": "boolean*",
+                  "XRefCode": "string*",
+                  "ShortName": "string*",
+                  "LongName": "string*",
+                  "LastModifiedTimestamp": "string"
+              }
             },
             "EmploymentStatuses": {
                 "operations": {
@@ -210,12 +256,35 @@
                 "parameters": {},
                 "key": "XRefCode",
                 "resources": {
-                    "IsBenefitArrearsEnabled": "boolean*",
-                    "XRefCode": "string*",
-                    "ShortName": "string*",
-                    "LongName": "string*",
-                    "LastModifiedTimestamp": "string"
+                    "XRefCode": "string*"
                 }
+            },
+            "EmploymentStatusesDetails": {
+              "operations": {
+                  "EmploymentStatusesDetailsList": {
+                      "method": "get",
+                      "call": {
+                          "mode":"iteration",
+                          "table": "EmploymentStatuses",
+                          "path": "/V1/EmploymentStatuses/{iterator}",
+                          "iterator": "XRefCode"
+                      },
+                      "processing_options": {
+                          "output_field": "Data"
+                      },
+                      "query_parameters": {
+                      }
+                  }
+              },
+              "parameters": {},
+              "key": "XRefCode",
+              "resources": {
+                  "IsBenefitArrearsEnabled": "boolean*",
+                  "XRefCode": "string*",
+                  "ShortName": "string*",
+                  "LongName": "string*",
+                  "LastModifiedTimestamp": "string"
+              }
             },
             "Jobs": {
                 "operations": {
@@ -234,71 +303,94 @@
                 "parameters": {},
                 "key": "XRefCode",
                 "resources": {
-                    "EmployeeEEO": {
-                        "XRefCode": "_:string*",
-                        "ShortName": "_:string*",
-                        "LongName": "_:string*",
-                        "LastModifiedTimestamp": "_:string"
-                      },
-                      "IsUnionJob": "string",
-                      "JobQualifications": "string*",
-                      "JobRank": "string",
-                      "JobSOC": {
-                        "XRefCode": "_:string*",
-                        "ShortName": "_:string*",
-                        "LongName": "_:string*",
-                        "LastModifiedTimestamp": "_:string"
-                      },
-                      "JobUDFstring*1": "string*",
-                      "JobUDFstring*2": "string*",
-                      "JobUDFstring*3": "string*",
-                      "LedgerCode": "string*",
-                      "NOC": "string*",
-                      "JobClassification": {
-                        "XRefCode": "_:string*",
-                        "ShortName": "_:string*",
-                        "LongName": "_:string*",
-                        "LastModifiedTimestamp": "_:string"
-                      },
-                      "JobFunction": {
-                        "Level": "_:string",
-                        "UsableForExternalPosting": "_:string",
-                        "XRefCode": "_:string*",
-                        "ShortName": "_:string*",
-                        "LongName": "_:string*",
-                        "LastModifiedTimestamp": "_:string"
-                      },
-                      "PayGrade": {
-                        "XRefCode": "_:string*",
-                        "ShortName": "_:string*",
-                        "LongName": "_:string*",
-                        "LastModifiedTimestamp": "_:string"
-                      },
-                      "Union": {
-                        "XRefCode": "_:string*",
-                        "ShortName": "_:string*",
-                        "LongName": "_:string*",
-                        "LastModifiedTimestamp": "_:string"
-                      },
-                      "EffectiveEnd": "string",
-                      "EffectiveStart": "string",
-                      "FLSAStatus": {
-                        "XRefCode": "_:string*",
-                        "ShortName": "_:string*",
-                        "LongName": "_:string*",
-                        "LastModifiedTimestamp": "_:string"
-                      },
-                      "JobFamily": {
-                        "XRefCode": "_:string*",
-                        "ShortName": "_:string*",
-                        "LongName": "_:string*",
-                        "LastModifiedTimestamp": "_:string"
-                      },
-                      "XRefCode": "string*",
-                      "ShortName": "string*",
-                      "LongName": "string*",
-                      "LastModifiedTimestamp": "string"
+                      "XRefCode": "string*"
                 }
+            },
+            "JobsDetails": {
+              "operations": {
+                  "JobsDetailsList": {
+                      "method": "get",
+                      "call": {
+                          "mode":"iteration",
+                          "table": "Jobs",
+                          "path": "/V1/Jobs/{iterator}",
+                          "iterator": "XRefCode"
+                      },
+                      "processing_options": {
+                          "output_field": "Data"
+                      },
+                      "query_parameters": {
+                      }
+                  }
+              },
+              "parameters": {},
+              "key": "XRefCode",
+              "resources": {
+                  "EmployeeEEO": {
+                      "XRefCode": "_:string*",
+                      "ShortName": "_:string*",
+                      "LongName": "_:string*",
+                      "LastModifiedTimestamp": "_:string"
+                    },
+                    "IsUnionJob": "string",
+                    "JobQualifications": "string*",
+                    "JobRank": "string",
+                    "JobSOC": {
+                      "XRefCode": "_:string*",
+                      "ShortName": "_:string*",
+                      "LongName": "_:string*",
+                      "LastModifiedTimestamp": "_:string"
+                    },
+                    "JobUDFstring*1": "string*",
+                    "JobUDFstring*2": "string*",
+                    "JobUDFstring*3": "string*",
+                    "LedgerCode": "string*",
+                    "NOC": "string*",
+                    "JobClassification": {
+                      "XRefCode": "_:string*",
+                      "ShortName": "_:string*",
+                      "LongName": "_:string*",
+                      "LastModifiedTimestamp": "_:string"
+                    },
+                    "JobFunction": {
+                      "Level": "_:string",
+                      "UsableForExternalPosting": "_:string",
+                      "XRefCode": "_:string*",
+                      "ShortName": "_:string*",
+                      "LongName": "_:string*",
+                      "LastModifiedTimestamp": "_:string"
+                    },
+                    "PayGrade": {
+                      "XRefCode": "_:string*",
+                      "ShortName": "_:string*",
+                      "LongName": "_:string*",
+                      "LastModifiedTimestamp": "_:string"
+                    },
+                    "Union": {
+                      "XRefCode": "_:string*",
+                      "ShortName": "_:string*",
+                      "LongName": "_:string*",
+                      "LastModifiedTimestamp": "_:string"
+                    },
+                    "EffectiveEnd": "string",
+                    "EffectiveStart": "string",
+                    "FLSAStatus": {
+                      "XRefCode": "_:string*",
+                      "ShortName": "_:string*",
+                      "LongName": "_:string*",
+                      "LastModifiedTimestamp": "_:string"
+                    },
+                    "JobFamily": {
+                      "XRefCode": "_:string*",
+                      "ShortName": "_:string*",
+                      "LongName": "_:string*",
+                      "LastModifiedTimestamp": "_:string"
+                    },
+                    "XRefCode": "string*",
+                    "ShortName": "string*",
+                    "LongName": "string*",
+                    "LastModifiedTimestamp": "string"
+              }
             },
             "LocationAddresses": {
                 "operations": {
@@ -354,56 +446,95 @@
                 "parameters": {},
                 "key": "XRefCode",
                 "resources": {
-                    "PhysicalLocation": "boolean",
-                    "BusinessPhone": "string*",
-                    "ContactBusinessPhone": "string*",
-                    "ContactCellPhone": "string*",
-                    "PostalCode": "string*",
-                    "CountryCode": "string*",
-                    "OpeningDate": "string",
-                    "ClosingDate": "string",
-                    "ComparableLocation": {
-                      "XRefCode": "_:string*",
-                      "ShortName": "_:string*",
-                      "LongName": "_:string*"
-                    },
-                    "Department": {
-                      "LedgerCode": "_:string*",
+                    "XRefCode": "string*"
+                }
+            },
+            "OrgUnitsDetails": {
+              "operations": {
+                  "OrgUnitsDetailsList": {
+                      "method": "get",
+                      "call": {
+                            "mode":"iteration",
+                            "table": "OrgUnits",
+                            "path": "/V1/OrgUnits/{iterator}",
+                            "iterator": "XRefCode"
+                      },
+                      "processing_options": {
+                          "output_field": "Data"
+                      },
+                      "query_parameters": {
+                      }
+                  }
+              },
+              "parameters": {},
+              "key": "XRefCode",
+              "resources": {
+                  "PhysicalLocation": "boolean",
+                  "BusinessPhone": "string*",
+                  "ContactBusinessPhone": "string*",
+                  "ContactCellPhone": "string*",
+                  "PostalCode": "string*",
+                  "CountryCode": "string*",
+                  "OpeningDate": "string",
+                  "ClosingDate": "string",
+                  "ComparableLocation": {
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*"
+                  },
+                  "Department": {
+                    "LedgerCode": "_:string*",
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "Zone": {
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "StartDayOfWeek": "string",
+                  "GeoCity": {
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "Timezone": {
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "County": "string*",
+                  "IsOrgManaged": "boolean",
+                  "IsMobileOrg": "boolean",
+                  "PublicName": "string*",
+                  "ClockTransferCode": "string*",
+                  "ContactEmail": "string*",
+                  "ContactName": "string*",
+                  "LedgerCode": "string*",
+                  "StateCode": "string*",
+                  "Address": "string*",
+                  "Address2": "string*",
+                  "LegalEntity": {
+                    "Country": {
+                      "Name": "_:string*",
                       "XRefCode": "_:string*",
                       "ShortName": "_:string*",
                       "LongName": "_:string*",
                       "LastModifiedTimestamp": "_:string"
                     },
-                    "Zone": {
-                      "XRefCode": "_:string*",
-                      "ShortName": "_:string*",
-                      "LongName": "_:string*",
-                      "LastModifiedTimestamp": "_:string"
-                    },
-                    "StartDayOfWeek": "string",
-                    "GeoCity": {
-                      "ShortName": "_:string*",
-                      "LongName": "_:string*",
-                      "LastModifiedTimestamp": "_:string"
-                    },
-                    "Timezone": {
-                      "XRefCode": "_:string*",
-                      "ShortName": "_:string*",
-                      "LongName": "_:string*",
-                      "LastModifiedTimestamp": "_:string"
-                    },
-                    "County": "string*",
-                    "IsOrgManaged": "boolean",
-                    "IsMobileOrg": "boolean",
-                    "PublicName": "string*",
-                    "ClockTransferCode": "string*",
-                    "ContactEmail": "string*",
-                    "ContactName": "string*",
-                    "LedgerCode": "string*",
-                    "StateCode": "string*",
-                    "Address": "string*",
-                    "Address2": "string*",
-                    "LegalEntity": {
+                    "LegalEntityAddress": {
+                      "Address1": "_:string*",
+                      "Address2": "_:string*",
+                      "Address3": "_:string*",
+                      "Address4": "_:string*",
+                      "Address5": "_:string*",
+                      "Address6": "_:string*",
+                      "City": "_:string*",
+                      "PostalCode": "_:string*",
                       "Country": {
                         "Name": "_:string*",
                         "XRefCode": "_:string*",
@@ -411,182 +542,166 @@
                         "LongName": "_:string*",
                         "LastModifiedTimestamp": "_:string"
                       },
-                      "LegalEntityAddress": {
-                        "Address1": "_:string*",
-                        "Address2": "_:string*",
-                        "Address3": "_:string*",
-                        "Address4": "_:string*",
-                        "Address5": "_:string*",
-                        "Address6": "_:string*",
-                        "City": "_:string*",
-                        "PostalCode": "_:string*",
-                        "Country": {
-                          "Name": "_:string*",
-                          "XRefCode": "_:string*",
-                          "ShortName": "_:string*",
-                          "LongName": "_:string*",
-                          "LastModifiedTimestamp": "_:string"
-                        },
-                        "State": {
-                          "Name": "_:string*",
-                          "XRefCode": "_:string*",
-                          "ShortName": "_:string*",
-                          "LongName": "_:string*",
-                          "LastModifiedTimestamp": "_:string"
-                        },
-                        "LastModifiedTimestamp": "string"
+                      "State": {
+                        "Name": "_:string*",
+                        "XRefCode": "_:string*",
+                        "ShortName": "_:string*",
+                        "LongName": "_:string*",
+                        "LastModifiedTimestamp": "_:string"
                       },
-                      "LegalIdNumber": "_:string*",
-                      "XRefCode": "_:string*",
-                      "ShortName": "_:string*",
-                      "LongName": "_:string*",
-                      "LastModifiedTimestamp": "_:string"
+                      "LastModifiedTimestamp": "string"
                     },
-                    "OrgUnitLegalEntities": {
-                      "Items": [
-                        {
-                          "LegalEntity": {
-                            "XRefCode": "_:string*",
-                            "ShortName": "_:string*",
-                            "LongName": "_:string*"
-                          },
-                          "EffectiveStart": "_:string",
-                          "EffectiveEnd": "_:string",
-                          "LegalEntityWorkSiteState": {
-                            "XRefCode": "_:string*",
-                            "ShortName": "_:string*",
-                            "LongName": "_:string*",
-                            "LastModifiedTimestamp": "_:string"
-                          },
-                          "OverrideCustomerFundingIdentifier": {
-                            "XRefCode": "_:string*",
-                            "ShortName": "_:string*",
-                            "LongName": "_:string*",
-                            "LastModifiedTimestamp": "_:string"
-                          },
+                    "LegalIdNumber": "_:string*",
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "OrgUnitLegalEntities": {
+                    "Items": [
+                      {
+                        "LegalEntity": {
+                          "XRefCode": "_:string*",
+                          "ShortName": "_:string*",
+                          "LongName": "_:string*"
+                        },
+                        "EffectiveStart": "_:string",
+                        "EffectiveEnd": "_:string",
+                        "LegalEntityWorkSiteState": {
                           "XRefCode": "_:string*",
                           "ShortName": "_:string*",
                           "LongName": "_:string*",
                           "LastModifiedTimestamp": "_:string"
-                        }
-                      ]
-                    },
-                    "OrgUnitParents": {
-                      "Items": [
-                        {
-                          "ParentOrgUnit": {
-                            "XRefCode": "_:string*",
-                            "ShortName": "_:string*",
-                            "LongName": "_:string*"
-                          },
-                          "EffectiveStart": "_:string",
-                          "EffectiveEnd": "_:string",
+                        },
+                        "OverrideCustomerFundingIdentifier": {
                           "XRefCode": "_:string*",
                           "ShortName": "_:string*",
                           "LongName": "_:string*",
                           "LastModifiedTimestamp": "_:string"
-                        }
-                      ]
-                    },
-                    "ChildOrgUnits": {
-                      "Items": [
-                        {
-                          "OrgLevel": {
-                            "XRefCode": "_:string*",
-                            "ShortName": "_:string*",
-                            "LongName": "_:string*",
-                            "LastModifiedTimestamp": "_:string"
-                          },
-                          "OrgUnitLegalEntities": {
-                            "Items": [
-                              {
-                                "LegalEntity": {
-                                  "XRefCode": "_:string*",
-                                  "ShortName": "_:string*",
-                                  "LongName": "_:string*"
-                                },
-                                "EffectiveStart": "_:string",
-                                "EffectiveEnd": "_:string",
-                                "LegalEntityWorkSiteState": {
-                                  "XRefCode": "_:string*",
-                                  "ShortName": "_:string*",
-                                  "LongName": "_:string*",
-                                  "LastModifiedTimestamp": "_:string"
-                                },
-                                "OverrideCustomerFundingIdentifier": {
-                                  "XRefCode": "_:string*",
-                                  "ShortName": "_:string*",
-                                  "LongName": "_:string*",
-                                  "LastModifiedTimestamp": "_:string"
-                                },
+                        },
+                        "XRefCode": "_:string*",
+                        "ShortName": "_:string*",
+                        "LongName": "_:string*",
+                        "LastModifiedTimestamp": "_:string"
+                      }
+                    ]
+                  },
+                  "OrgUnitParents": {
+                    "Items": [
+                      {
+                        "ParentOrgUnit": {
+                          "XRefCode": "_:string*",
+                          "ShortName": "_:string*",
+                          "LongName": "_:string*"
+                        },
+                        "EffectiveStart": "_:string",
+                        "EffectiveEnd": "_:string",
+                        "XRefCode": "_:string*",
+                        "ShortName": "_:string*",
+                        "LongName": "_:string*",
+                        "LastModifiedTimestamp": "_:string"
+                      }
+                    ]
+                  },
+                  "ChildOrgUnits": {
+                    "Items": [
+                      {
+                        "OrgLevel": {
+                          "XRefCode": "_:string*",
+                          "ShortName": "_:string*",
+                          "LongName": "_:string*",
+                          "LastModifiedTimestamp": "_:string"
+                        },
+                        "OrgUnitLegalEntities": {
+                          "Items": [
+                            {
+                              "LegalEntity": {
+                                "XRefCode": "_:string*",
+                                "ShortName": "_:string*",
+                                "LongName": "_:string*"
+                              },
+                              "EffectiveStart": "_:string",
+                              "EffectiveEnd": "_:string",
+                              "LegalEntityWorkSiteState": {
                                 "XRefCode": "_:string*",
                                 "ShortName": "_:string*",
                                 "LongName": "_:string*",
                                 "LastModifiedTimestamp": "_:string"
-                              }
-                            ]
-                          },
-                          "OrgUnitParents": {
-                            "Items": [
-                              {
-                                "ParentOrgUnit": {
-                                  "XRefCode": "_:string*",
-                                  "ShortName": "_:string*",
-                                  "LongName": "_:string*"
-                                },
-                                "EffectiveStart": "_:string",
-                                "EffectiveEnd": "_:string",
+                              },
+                              "OverrideCustomerFundingIdentifier": {
                                 "XRefCode": "_:string*",
                                 "ShortName": "_:string*",
                                 "LongName": "_:string*",
                                 "LastModifiedTimestamp": "_:string"
-                              }
-                            ]
-                          },
-                          "OrgUnitLocationTypes": {
-                            "Items": [
-                              {
-                                "LocationType": {
-                                  "XRefCode": "_:string*",
-                                  "ShortName": "_:string*",
-                                  "LongName": "_:string*",
-                                  "LastModifiedTimestamp": "_:string"
-                                },
+                              },
+                              "XRefCode": "_:string*",
+                              "ShortName": "_:string*",
+                              "LongName": "_:string*",
+                              "LastModifiedTimestamp": "_:string"
+                            }
+                          ]
+                        },
+                        "OrgUnitParents": {
+                          "Items": [
+                            {
+                              "ParentOrgUnit": {
+                                "XRefCode": "_:string*",
+                                "ShortName": "_:string*",
+                                "LongName": "_:string*"
+                              },
+                              "EffectiveStart": "_:string",
+                              "EffectiveEnd": "_:string",
+                              "XRefCode": "_:string*",
+                              "ShortName": "_:string*",
+                              "LongName": "_:string*",
+                              "LastModifiedTimestamp": "_:string"
+                            }
+                          ]
+                        },
+                        "OrgUnitLocationTypes": {
+                          "Items": [
+                            {
+                              "LocationType": {
+                                "XRefCode": "_:string*",
+                                "ShortName": "_:string*",
+                                "LongName": "_:string*",
                                 "LastModifiedTimestamp": "_:string"
-                              }
-                            ]
-                          },
+                              },
+                              "LastModifiedTimestamp": "_:string"
+                            }
+                          ]
+                        },
+                        "XRefCode": "_:string*",
+                        "ShortName": "_:string*",
+                        "LongName": "_:string*",
+                        "LastModifiedTimestamp": "_:string"
+                      }
+                    ]
+                  },
+                  "OrgUnitLocationTypes": {
+                    "Items": [
+                      {
+                        "LocationType": {
                           "XRefCode": "_:string*",
                           "ShortName": "_:string*",
                           "LongName": "_:string*",
                           "LastModifiedTimestamp": "_:string"
-                        }
-                      ]
-                    },
-                    "OrgUnitLocationTypes": {
-                      "Items": [
-                        {
-                          "LocationType": {
-                            "XRefCode": "_:string*",
-                            "ShortName": "_:string*",
-                            "LongName": "_:string*",
-                            "LastModifiedTimestamp": "_:string"
-                          },
-                          "LastModifiedTimestamp": "_:string"
-                        }
-                      ]
-                    },
-                    "OrgLevel": {
-                      "XRefCode": "_:string*",
-                      "ShortName": "_:string*",
-                      "LongName": "_:string*",
-                      "LastModifiedTimestamp": "_:string"
-                    },
-                    "XRefCode": "string*",
-                    "ShortName": "string*",
-                    "LongName": "string*",
-                    "LastModifiedTimestamp": "string"
-                }
+                        },
+                        "LastModifiedTimestamp": "_:string"
+                      }
+                    ]
+                  },
+                  "OrgLevel": {
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "XRefCode": "string*",
+                  "ShortName": "string*",
+                  "LongName": "string*",
+                  "LastModifiedTimestamp": "string"
+              }
             },
             "PayClasses": {
                 "operations": {
@@ -648,8 +763,441 @@
                     "LongName": "string*",
                     "LastModifiedTimestamp": "string"
                 }
+            },
+            "Positions": {
+              "operations": {
+                  "PositionsList": {
+                      "method": "get",
+                      "call": {
+                          "path": "/V1/Positions"
+                      },
+                      "processing_options": {
+                          "output_field": "Data"
+                      },
+                      "query_parameters": {
+                      }
+                  }
+              },
+              "parameters": {},
+              "key": "XRefCode",
+              "resources": {
+                    "XRefCode": "string*"
+              }
+            },
+            "PositionsDetails": {
+              "operations": {
+                  "PositionsDetailsList": {
+                      "method": "get",
+                      "call": {
+                            "mode":"iteration",
+                            "table": "Positions",
+                            "path": "/V1/Positions/{iterator}",
+                            "iterator": "XRefCode"
+                      },
+                      "processing_options": {
+                          "output_field": "Data"
+                      },
+                      "query_parameters": {
+                      }
+                  }
+              },
+              "parameters": {},
+              "key": "XRefCode",
+              "resources": {
+                "AverageDailyHours": "string",
+                "ClockTransferCode": "string*",
+                "Department": {
+                  "LedgerCode": "_:string*",
+                  "XRefCode": "_:string*",
+                  "ShortName": "_:string*",
+                  "LongName": "_:string*",
+                  "LastModifiedTimestamp": "_:string"
+                },
+                "Job": {
+                  "EmployeeEEO": {
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "IsUnionJob": "_:boolean",
+                  "JobQualifications": "_:string*",
+                  "JobRank": "_:string",
+                  "JobSOC": {
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "JobUDFString1": "_:string*",
+                  "JobUDFString2": "_:string*",
+                  "JobUDFString3": "_:string*",
+                  "LedgerCode": "_:string*",
+                  "NOC": "_:string*",
+                  "JobClassification": {
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "JobFunction": {
+                    "Level": "_:string",
+                    "UsableForExternalPosting": "_:boolean",
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "PayGrade": {
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "Union": {
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "EffectiveEnd": "_:string",
+                  "EffectiveStart": "_:string",
+                  "FLSAStatus": {
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "JobFamily": {
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "XRefCode": "_:string*",
+                  "ShortName": "_:string*",
+                  "LongName": "_:string*",
+                  "LastModifiedTimestamp": "_:string"
+                },
+                "EffectiveStart": "string",
+                "EffectiveEnd": "string",
+                "EmploymentIndicator": {
+                  "XRefCode": "_:string*",
+                  "ShortName": "_:string*",
+                  "LongName": "_:string*",
+                  "LastModifiedTimestamp": "_:string"
+                },
+                "Executive": "boolean",
+                "FTE": "string",
+                "IsNonService": "boolean",
+                "IsWCBExempt": "boolean",
+                "LedgerCode": "string*",
+                "Officer": "boolean",
+                "PayClass": {
+                  "SortOrder": "_:string",
+                  "DefaultNormalWeeklyHours": "_:string",
+                  "LedgerCode": "_:string*",
+                  "PayClassGroup": {
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "XRefCode": "_:string*",
+                  "ShortName": "_:string*",
+                  "LongName": "_:string*",
+                  "LastModifiedTimestamp": "_:string"
+                },
+                "PayGroup": {
+                  "PayFrequency": {
+                    "PayFrequencyType": "_:string*",
+                    "XRefCode": "_:string*",
+                    "ShortName": "_:string*",
+                    "LongName": "_:string*",
+                    "LastModifiedTimestamp": "_:string"
+                  },
+                  "XRefCode": "_:string*",
+                  "ShortName": "_:string*",
+                  "LongName": "_:string*",
+                  "LastModifiedTimestamp": "_:string"
+                },
+                "PayType": {
+                  "MaximumRate": "_:string",
+                  "MaximumSalary": "_:string",
+                  "SortOrder": "_:string",
+                  "HidePayOnTimesheet": "_:boolean",
+                  "IsPayrollAutoPay": "_:boolean",
+                  "LedgerCode": "_:string*",
+                  "XRefCode": "_:string*",
+                  "ShortName": "_:string*",
+                  "LongName": "_:string*",
+                  "LastModifiedTimestamp": "_:string"
+                },
+                "PositionTerm": {
+                  "XRefCode": "_:string*",
+                  "ShortName": "_:string*",
+                  "LongName": "_:string*",
+                  "LastModifiedTimestamp": "_:string"
+                },
+                "PPACAFullTime": "boolean",
+                "SemiMonthlyBottomHours": "string",
+                "SemiMonthlyTopHours": "string",
+                "StandardCostRate": "string",
+                "WeeklyHours": "string",
+                "DefaultTargetBonus": "string",
+                "PositionAssignments": {
+                  "Items": [
+                    {
+                      "Location": {
+                        "PhysicalLocation": "_:boolean",
+                        "BusinessPhone": "_:string*",
+                        "ContactBusinessPhone": "_:string*",
+                        "ContactCellPhone": "_:string*",
+                        "PostalCode": "_:string*",
+                        "CountryCode": "_:string*",
+                        "OpeningDate": "_:string",
+                        "ClosingDate": "_:string",
+                        "ComparableLocation": {
+                          "XRefCode": "_:string*",
+                          "ShortName": "_:string*",
+                          "LongName": "_:string*"
+                        },
+                        "Department": {
+                          "LedgerCode": "_:string*",
+                          "XRefCode": "_:string*",
+                          "ShortName": "_:string*",
+                          "LongName": "_:string*",
+                          "LastModifiedTimestamp": "_:string"
+                        },
+                        "Zone": {
+                          "XRefCode": "_:string*",
+                          "ShortName": "_:string*",
+                          "LongName": "_:string*",
+                          "LastModifiedTimestamp": "_:string"
+                        },
+                        "StartDayOfWeek": "_:string",
+                        "GeoCity": {
+                          "ShortName": "_:string*",
+                          "LongName": "_:string*",
+                          "LastModifiedTimestamp": "_:string"
+                        },
+                        "Timezone": {
+                          "XRefCode": "_:string*",
+                          "ShortName": "_:string*",
+                          "LongName": "_:string*",
+                          "LastModifiedTimestamp": "_:string"
+                        },
+                        "County": "_:string*",
+                        "IsOrgManaged": "_:boolean",
+                        "IsMobileOrg": "_:boolean",
+                        "PublicName": "_:string*",
+                        "ClockTransferCode": "_:string*",
+                        "ContactEmail": "_:string*",
+                        "ContactName": "_:string*",
+                        "LedgerCode": "_:string*",
+                        "StateCode": "_:string*",
+                        "Address": "_:string*",
+                        "Address2": "_:string*",
+                        "LegalEntity": {
+                          "Country": {
+                            "Name": "_:string*",
+                            "XRefCode": "_:string*",
+                            "ShortName": "_:string*",
+                            "LongName": "_:string*",
+                            "LastModifiedTimestamp": "_:string"
+                          },
+                          "LegalEntityAddress": {
+                            "Address1": "_:string*",
+                            "Address2": "_:string*",
+                            "Address3": "_:string*",
+                            "Address4": "_:string*",
+                            "Address5": "_:string*",
+                            "Address6": "_:string*",
+                            "City": "_:string*",
+                            "PostalCode": "_:string*",
+                            "Country": {
+                              "Name": "_:string*",
+                              "XRefCode": "_:string*",
+                              "ShortName": "_:string*",
+                              "LongName": "_:string*",
+                              "LastModifiedTimestamp": "_:string"
+                            },
+                            "State": {
+                              "Name": "_:string*",
+                              "XRefCode": "_:string*",
+                              "ShortName": "_:string*",
+                              "LongName": "_:string*",
+                              "LastModifiedTimestamp": "_:string"
+                            },
+                            "LastModifiedTimestamp": "_:string"
+                          },
+                          "LegalIdNumber": "_:string*",
+                          "XRefCode": "_:string*",
+                          "ShortName": "_:string*",
+                          "LongName": "_:string*",
+                          "LastModifiedTimestamp": "_:string"
+                        },
+                        "OrgUnitLegalEntities": {
+                          "Items": [
+                            {
+                              "LegalEntity": {
+                                "XRefCode": "_:string*",
+                                "ShortName": "_:string*",
+                                "LongName": "_:string*"
+                              },
+                              "EffectiveStart": "_:string",
+                              "EffectiveEnd": "_:string",
+                              "LegalEntityWorkSiteState": {
+                                "XRefCode": "_:string*",
+                                "ShortName": "_:string*",
+                                "LongName": "_:string*",
+                                "LastModifiedTimestamp": "_:string"
+                              },
+                              "OverrideCustomerFundingIdentifier": {
+                                "XRefCode": "_:string*",
+                                "ShortName": "_:string*",
+                                "LongName": "_:string*",
+                                "LastModifiedTimestamp": "_:string"
+                              },
+                              "XRefCode": "_:string*",
+                              "ShortName": "_:string*",
+                              "LongName": "_:string*",
+                              "LastModifiedTimestamp": "_:string"
+                            }
+                          ]
+                        },
+                        "OrgUnitParents": {
+                          "Items": [
+                            {
+                              "ParentOrgUnit": {
+                                "XRefCode": "_:string*",
+                                "ShortName": "_:string*",
+                                "LongName": "_:string*"
+                              },
+                              "EffectiveStart": "_:string",
+                              "EffectiveEnd": "_:string",
+                              "XRefCode": "_:string*",
+                              "ShortName": "_:string*",
+                              "LongName": "_:string*",
+                              "LastModifiedTimestamp": "_:string"
+                            }
+                          ]
+                        },
+                        "ChildOrgUnits": {
+                          "Items": [
+                            {
+                              "OrgLevel": {
+                                "XRefCode": "_:string*",
+                                "ShortName": "_:string*",
+                                "LongName": "_:string*",
+                                "LastModifiedTimestamp": "_:string"
+                              },
+                              "OrgUnitLegalEntities": {
+                                "Items": [
+                                  {
+                                    "LegalEntity": {
+                                      "XRefCode": "_:string*",
+                                      "ShortName": "_:string*",
+                                      "LongName": "_:string*"
+                                    },
+                                    "EffectiveStart": "_:string",
+                                    "EffectiveEnd": "_:string",
+                                    "LegalEntityWorkSiteState": {
+                                      "XRefCode": "_:string*",
+                                      "ShortName": "_:string*",
+                                      "LongName": "_:string*",
+                                      "LastModifiedTimestamp": "_:string"
+                                    },
+                                    "OverrideCustomerFundingIdentifier": {
+                                      "XRefCode": "_:string*",
+                                      "ShortName": "_:string*",
+                                      "LongName": "_:string*",
+                                      "LastModifiedTimestamp": "_:string"
+                                    },
+                                    "XRefCode": "_:string*",
+                                    "ShortName": "_:string*",
+                                    "LongName": "_:string*",
+                                    "LastModifiedTimestamp": "_:string"
+                                  }
+                                ]
+                              },
+                              "OrgUnitParents": {
+                                "Items": [
+                                  {
+                                    "ParentOrgUnit": {
+                                      "XRefCode": "_:string*",
+                                      "ShortName": "_:string*",
+                                      "LongName": "_:string*"
+                                    },
+                                    "EffectiveStart": "_:string",
+                                    "EffectiveEnd": "_:string",
+                                    "XRefCode": "_:string*",
+                                    "ShortName": "_:string*",
+                                    "LongName": "_:string*",
+                                    "LastModifiedTimestamp": "_:string"
+                                  }
+                                ]
+                              },
+                              "OrgUnitLocationTypes": {
+                                "Items": [
+                                  {
+                                    "LocationType": {
+                                      "XRefCode": "_:string*",
+                                      "ShortName": "_:string*",
+                                      "LongName": "_:string*",
+                                      "LastModifiedTimestamp": "_:string"
+                                    },
+                                    "LastModifiedTimestamp": "_:string"
+                                  }
+                                ]
+                              },
+                              "XRefCode": "_:string*",
+                              "ShortName": "_:string*",
+                              "LongName": "_:string*",
+                              "LastModifiedTimestamp": "_:string"
+                            }
+                          ]
+                        },
+                        "OrgUnitLocationTypes": {
+                          "Items": [
+                            {
+                              "LocationType": {
+                                "XRefCode": "_:string*",
+                                "ShortName": "_:string*",
+                                "LongName": "_:string*",
+                                "LastModifiedTimestamp": "_:string"
+                              },
+                              "LastModifiedTimestamp": "_:string"
+                            }
+                          ]
+                        },
+                        "OrgLevel": {
+                          "XRefCode": "_:string*",
+                          "ShortName": "_:string*",
+                          "LongName": "_:string*",
+                          "LastModifiedTimestamp": "_:string"
+                        },
+                        "XRefCode": "_:string*",
+                        "ShortName": "_:string*",
+                        "LongName": "_:string*",
+                        "LastModifiedTimestamp": "_:string"
+                      },
+                      "BudgetedHeadCount": "_:string",
+                      "EffectiveEnd": "_:string",
+                      "EffectiveStart": "_:string",
+                      "XRefCode": "_:string*",
+                      "ShortName": "_:string*",
+                      "LongName": "_:string*",
+                      "LastModifiedTimestamp": "_:string"
+                    }
+                  ]
+                },
+                "XRefCode": "string*",
+                "ShortName": "string*",
+                "LongName": "string*",
+                "LastModifiedTimestamp": "string"
+              }
             }
-            
         }
     },
     "rest": {
