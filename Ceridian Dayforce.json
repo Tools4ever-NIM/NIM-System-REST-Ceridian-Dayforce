@@ -58,7 +58,7 @@
                         "call": {
                             "mode":"iteration",
                             "table": "Departments",
-                            "path": "/V1/Departments/{iterator}",
+                            "path": "/V1/Departments?xrefcode={iterator}",
                             "iterator": "XRefCode"
                         },
                         "processing_options": {
@@ -215,7 +215,7 @@
                       "call": {
                           "mode":"iteration",
                           "table": "EmploymentStatusReasons",
-                          "path": "/V1/EmploymentStatusReasons/{iterator}",
+                          "path": "/V1/EmploymentStatusReasons?xrefcode={iterator}",
                           "iterator": "XRefCode"
                       },
                       "processing_options": {
@@ -266,7 +266,7 @@
                       "call": {
                           "mode":"iteration",
                           "table": "EmploymentStatuses",
-                          "path": "/V1/EmploymentStatuses/{iterator}",
+                          "path": "/V1/EmploymentStatuses?xrefcode={iterator}",
                           "iterator": "XRefCode"
                       },
                       "processing_options": {
@@ -313,7 +313,7 @@
                       "call": {
                           "mode":"iteration",
                           "table": "Jobs",
-                          "path": "/V1/Jobs/{iterator}",
+                          "path": "/V1/Jobs?xrefcode={iterator}",
                           "iterator": "XRefCode"
                       },
                       "processing_options": {
@@ -456,7 +456,7 @@
                       "call": {
                             "mode":"iteration",
                             "table": "OrgUnits",
-                            "path": "/V1/OrgUnits/{iterator}",
+                            "path": "/V1/OrgUnits?xrefcode={iterator}",
                             "iterator": "XRefCode"
                       },
                       "processing_options": {
@@ -791,7 +791,7 @@
                       "call": {
                             "mode":"iteration",
                             "table": "Positions",
-                            "path": "/V1/Positions/{iterator}",
+                            "path": "/V1/Positions?xrefcode={iterator}",
                             "iterator": "XRefCode"
                       },
                       "processing_options": {
