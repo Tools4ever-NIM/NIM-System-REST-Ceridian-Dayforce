@@ -1,10 +1,30 @@
-# NIM-System-REST-Ceridian-Dayforce
+# Ceridian Dayforce
 
-# API Documentation
-<a href="https://developers.dayforce.com/Build/Dayforce-Security-Framework.asp">Create API Connection</a>
+<img src="https://github.com/Tools4ever-NIM/NIM-System-REST-Ceridian-Dayforce/assets/24281600/1df70a98-29b3-462b-9061-81c8273e1825" width="256px" />
 
-# Throttling
-![image](https://github.com/Tools4ever-NIM/NIM-System-REST-Ceridian-Dayforce/assets/24281600/b36b184c-8d62-4eee-9654-3c5c288ea957)
+## Data Tables
+- Contact Information Types
+- Departments
+- Departments Details
+- Employees
+- Employees Details
+- Employment Status Reasons
+- Employment Status Reasons Details
+- Employment Statuses
+- Employment Statuses Details
+- Jobs
+- Jobs Details
+- Location Addresses
+- Org Units
+- Org Units Details
+- Pay Classes
+- Pay Types
+- Positions
+- Positions Details
+
+
+## Actions
+N/A
 
 # NIM Docs
 The official NIM documentation can be found at: https://docs.nimsuite.com
