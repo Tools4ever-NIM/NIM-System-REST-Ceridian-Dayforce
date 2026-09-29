@@ -1,5 +1,7 @@
 # Ceridian Dayforce
 
+Read the [Ceridian Dayforce integration documentation](https://docs.nimsuite.com/en/integrations/ceridian-dayforce) for connector details and related guides.
+
 <img src="https://github.com/Tools4ever-NIM/NIM-System-REST-Ceridian-Dayforce/assets/24281600/1df70a98-29b3-462b-9061-81c8273e1825" width="256px" />
 
 ## Data Tables
